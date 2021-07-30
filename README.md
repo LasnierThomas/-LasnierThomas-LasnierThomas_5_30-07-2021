@@ -38,7 +38,7 @@ Concernant l’API, des promesses devront être utilisées pour éviter les rapp
 Les inputs des utilisateurs doivent être validés avant l’envoi à l’API.
 
 ### Validations des données :
--Pour les routes POST, l’objet contact envoyé au serveur doit contenir les champs
+- Pour les routes POST, l’objet contact envoyé au serveur doit contenir les champs
 firstName, lastName, address, city et email. Le tableau des produits envoyé au
 backend doit être un array de strings products. Les types de ces champs et leur
 présence doivent être validés avant l’envoi des données au serveur.
