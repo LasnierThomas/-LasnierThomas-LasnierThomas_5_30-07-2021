@@ -1,3 +1,4 @@
+
 # Projet 5 Construisez un site e-commerce
 
 ## Création d'une application web pour la vente d'objets
@@ -42,3 +43,4 @@ Les inputs des utilisateurs doivent être validés avant l’envoi à l’API.
 firstName, lastName, address, city et email. Le tableau des produits envoyé au
 backend doit être un array de strings products. Les types de ces champs et leur
 présence doivent être validés avant l’envoi des données au serveur.
+

@@ -1,15 +1,17 @@
 {
-  "name": "projet5",
+  "name": "orinoco-backend",
   "version": "1.0.0",
-  "description": "Conception d'un site e-commerce ",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch ./scss/index.scss:./index/index.css"
   },
   "author": "",
   "license": "ISC",
   "browserlist": "last 4 versions",
-     "dependencies": {
-      "sass": "^1.32.13"
-    }
+  "dependencies": {
+    "express": "^4.16.4",
+    "uuid": "^3.3.2"
   }
+}
