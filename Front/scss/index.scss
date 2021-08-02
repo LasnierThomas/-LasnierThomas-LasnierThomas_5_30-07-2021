@@ -1,0 +1,50 @@
+@import "./layout/header.scss";
+@import "./layout/footer.scss";
+
+body{
+    margin: 0;
+    padding: 0;
+   
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.all-box{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.box-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 5%;
+    border: rgb(81, 170, 253) solid 2px;
+    border-radius: 20px;
+}
+.box-article img{
+    width: 100%;
+    height: auto;
+    border-radius: 17px 18px 0 0;
+    object-fit: cover;
+}
+.box-price{
+    font-size: 20px;
+    font-weight: bold;
+}
+.link-box{
+    width: 100%;
+}
+
+.star-full{
+    color: rgb(230, 230, 7);
+}
+.star-null{
+    color: gray;
+}

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans&display=swap");
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-family: "indie flower", cursive;
+  font-size: 80px;
+  text-align: center;
+  margin-left: 4%;
+  line-height: 0;
+  color: #51aafd;
+}
+
+.header-nav li {
+  list-style: none;
+  display: inline;
+  margin: 0 15px;
+  font-size: 20px;
+}
+.header-nav li :hover {
+  color: #51aafd;
+}
+
+.shop-icon {
+  color: #51aafd;
+  font-size: 30px;
+}
+
+.all-footer {
+  display: flex;
+  width: 99%;
+  border: black 2px solid;
+  background-color: #51aafd;
+}
+
+.box-about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  margin: 0 15px;
+}
+
+.box-contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.all-box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.box-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 5%;
+  border: #51aafd solid 2px;
+  border-radius: 20px;
+}
+
+.box-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 17px 18px 0 0;
+  object-fit: cover;
+}
+
+.box-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link-box {
+  width: 100%;
+}
+
+.star-full {
+  color: #e6e607;
+}
+
+.star-null {
+  color: gray;
+}
+
+/*# sourceMappingURL=style.css.map */

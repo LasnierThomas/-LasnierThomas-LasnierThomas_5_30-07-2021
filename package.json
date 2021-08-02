@@ -1,17 +1,16 @@
 {
-  "name": "orinoco-backend",
+  "name": "projet5",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch ./scss/index.scss:./index/index.css"
+    "sass":"sass --watch ../front/scss/index.scss:../front/style.css"
   },
+
   "author": "",
   "license": "ISC",
   "browserlist": "last 4 versions",
   "dependencies": {
-    "express": "^4.16.4",
-    "uuid": "^3.3.2"
+    "sass": "^1.32.13"
   }
 }

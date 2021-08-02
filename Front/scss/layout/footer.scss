@@ -1,0 +1,19 @@
+.all-footer{
+    display: flex;
+    width: 99%;
+    border: black 2px solid;
+    background-color: rgb(81, 170, 253);
+}
+.box-about{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    margin: 0 15px;
+}
+.box-contact{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+}
