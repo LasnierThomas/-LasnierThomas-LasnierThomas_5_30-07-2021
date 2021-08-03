@@ -6,7 +6,6 @@ body {
   padding: 0;
 }
 
-
 .all-box {
   display: flex;
   flex-direction: column;
@@ -16,8 +15,8 @@ body {
   margin: 3% 3%;
   padding: 3% 3% 4%;
 }
-img{
-    border-radius: 20px;
+img {
+  border-radius: 20px;
 }
 
 .star-full {
@@ -50,21 +49,21 @@ img{
   }
 }
 
-@media  screen and (min-width:1100px) {
-    .all-box{
-        flex-direction: row;
-    }
-    img{
-        width: 100%;
-    }
-    .box-txt{
-        width: 100%;
-        height: auto;
-        margin: 2%;
-    }
+@media screen and (min-width: 1100px) {
+  .all-box {
+    flex-direction: row;
+  }
+  img {
+    width: 100%;
+  }
+  .box-txt {
+    width: 100%;
+    height: auto;
+    margin: 2%;
+  }
 }
 @media screen and (min-width: 1280px) {
-    .box-txt{
-        padding: 2%;
-    }
+  .box-txt {
+    padding: 2%;
+  }
 }
