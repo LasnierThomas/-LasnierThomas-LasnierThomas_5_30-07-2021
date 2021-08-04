@@ -17,6 +17,7 @@ body {
 }
 img {
   border-radius: 20px;
+  
 }
 
 .star-full {
@@ -53,13 +54,18 @@ img {
   .all-box {
     flex-direction: row;
   }
+  h2{
+    margin-top: 8%;
+  }
   img {
-    width: 100%;
+    width: 48%;
+    
   }
   .box-txt {
-    width: 100%;
+    width: 48%;
     height: auto;
-    margin: 2%;
+    padding: 5% 2% 2% 2%;
+    
   }
 }
 @media screen and (min-width: 1280px) {
