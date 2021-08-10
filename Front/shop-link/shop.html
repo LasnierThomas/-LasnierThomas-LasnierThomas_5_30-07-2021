@@ -11,25 +11,59 @@
 
 <body>
     <header class="banner">
-        <h1 class="site-title">Orinoco</h1>
+        <h1 class="site-title"><img src="../images/head.jpg"></h1>
         <nav class="header-nav">
             <ul>
-                <li><a class="link-acceuil" href="#">Acceuil</a></li>
-                <li><a class="link-register" href="#">S'inscrire</a></li>
+                <li><a class="link-accueil" href="../index.html">Accueil</a></li>
+                
             </ul>
         </nav>
     </header>
 
     <h2 class="title-shop">Objet dans votre panier</h2>
     <div class="all-box">
-        <div class="box-object"></div>
+        
+            <table class="border-sell">
+                <tr class="line-object">
+                    <td class="description-object"><img src="../images/teddy_1.jpg" alt="ours brun"></td>
+                    <td class="description-object">Petit ours brun</td>
+                    <td class="description-object"><button id="bt-moin">-</button><span id="nb">1</span><button id="bt-plus">+</button></td>
+                    <td class="description-object">20€</td>
+                    <td class="description-object"><i class="fas fa-trash"></i></td>
+
+                </tr>
+            </table>
         <div class="box-price">
-            <p class="object">Produits :</p>
-            <p class="delivery">Livraison :</p>
-            <p class="total">Total :</p>
+            <div class="total-object">
+                <p> Produits :</p>
+                <p class="end-object">x€</p>
+            </div>
+            <div class="total-delivery">
+                <p>Livraison :</p>
+                <p>5€</p>
+            </div>
+            <div class="total-end">
+                <p>Total :</p>
+                <p class="end-price">x€</p>
+            </div>
             <a href="#" class="validation">Valider ma commande</a>
         </div>
     </div>
+
+    <form class="form" methode="post" action="#">
+        <label class="box-form" for="name">Nom</label>
+        <input type="text" id="name" name="name" >
+        <label class="box-form" for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom">
+        <label class="box-form" for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse">
+        <label class="box-form" for="cp">Code Postal</label>
+        <input type="text" id="cp" name="cp">
+        <label class="box-form" for="city">Ville</label>
+        <input type="text" id="city" name="city">
+        <input id="summit" type="submit" value="Envoyer">
+    </form>
+
     <Footer class="all-footer">
         <div class="box-about">
             <h3>A propos de nous</h3>
@@ -41,7 +75,7 @@
         </div>
     </Footer>
 
-
+    <script src="https://kit.fontawesome.com/b6a81d022b.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

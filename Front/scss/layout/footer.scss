@@ -1,15 +1,15 @@
 .all-footer{
     display: flex;
-    width: 99%;
+    width: 99.5%;
     border: black 2px solid;
-    background-color: rgb(81, 170, 253);
+    background: linear-gradient(349deg, rgba(147,91,254,1) 5%, rgba(222,135,33,1) 96%);
 }
 .box-about{
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 50%;
-    margin: 0 15px;
+    margin: 5px 15px;
 }
 .box-contact{
     display: flex;

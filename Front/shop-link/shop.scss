@@ -1,6 +1,10 @@
 @import "../scss/layout/header.scss";
 @import "../scss/layout/footer.scss";
 
+body {
+  
+  background-color: rgb(242, 232, 240);
+}
 .title-shop {
   display: flex;
   width: 100%;
@@ -16,6 +20,24 @@
   height: auto;
   margin-bottom: 2%;
 }
+
+
+.border-sell{
+  border: solid black 1px;
+}
+.line-object{
+  display: flex;
+  align-items: center;
+}
+.description-object{
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+img{
+  width: 100%;
+}
 .box-object {
   display: flex;
   justify-content: flex-end;
@@ -27,24 +49,28 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 300px;
+  height: 420px;
   border: black 1px solid;
   margin-left: 2%;
   margin-top: 2%;
 }
-.object {
+
+.total-object {
   display: flex;
+  justify-content: space-around;
   font-size: 30px;
   line-height: 0;
 }
-.delivery {
+.total-delivery {
   display: flex;
+  justify-content: space-around;
   font-size: 30px;
   border-bottom: solid 1px black;
   margin-top: 0;
 }
-.total {
+.total-end {
   display: flex;
+  justify-content: space-around;
   font-size: 40px;
   font-weight: bold;
   margin: 0;
@@ -65,6 +91,28 @@
     box-shadow: 0px 0 0 50px red;
   }
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  margin: 10% 20% 10% 21%;
+  padding: 5%;
+  border: black 1px solid;
+}
+.box-form{
+  margin: 3% 0;
+ 
+  
+}
+#summit{
+  margin-top: 15%;
+  height: 40px;
+}
+
 @media screen and (min-width: 1100px) {
   .all-box {
     flex-direction: row;
@@ -89,13 +137,16 @@
 .thank {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   font-size: 40px;
   text-align: center;
+  margin: 7% 3%;
 }
-.color-name {
-  color: rgb(81, 170, 253);
-  
-  
+strong {
+  color: rgb(143, 91, 254);
+}
+.paraph{
+  margin: 0;
 }
 .meassage {
   display: flex;
@@ -108,4 +159,15 @@
 .color-shop {
   color: rgb(81, 170, 253);
   
+}
+#summit{
+ margin-left: 25%;
+ width: 50%;
+ 
+}
+@media screen and (min-width: 1250px){
+  .form{
+    width: 27%;
+    margin-left: 35%;
+  }
 }

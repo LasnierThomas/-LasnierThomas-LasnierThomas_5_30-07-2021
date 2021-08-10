@@ -2,15 +2,15 @@
 @import "../scss/layout/footer.scss";
 
 body {
-  margin: 0;
-  padding: 0;
+  
+  background-color: rgb(242, 232, 240);
 }
 
 .all-box {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: rgb(81, 170, 253) solid 2px;
+  border: rgb(143, 91, 254) solid 2px;
   border-radius: 20px;
   margin: 3% 3%;
   padding: 3% 3% 4%;
@@ -32,6 +32,7 @@ img {
   font-weight: bold;
 }
 .btn-shop {
+  
   text-align: center;
   margin: 5% 0 5% 0%;
   padding: 15px 10px;
@@ -43,11 +44,13 @@ img {
   color: white;
   background: rgb(230, 141, 40);
   line-height: 5;
-  :hover {
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
-    box-shadow: 0px 0 0 50px red;
-  }
+    
+}
+a:hover{
+  background: rgb(143, 91, 254);
+}
+a:active{
+  background: rgb(143, 91, 254);
 }
 
 @media screen and (min-width: 1100px) {

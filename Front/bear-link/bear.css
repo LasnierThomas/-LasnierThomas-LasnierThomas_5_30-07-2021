@@ -4,6 +4,10 @@ a {
   color: black;
 }
 
+img {
+  width: 100%;
+}
+
 .banner {
   width: 100%;
   display: flex;
@@ -13,12 +17,8 @@ a {
 }
 
 .site-title {
-  font-family: "indie flower", cursive;
-  font-size: 80px;
   text-align: center;
-  margin-left: 4%;
   line-height: 0;
-  color: #51aafd;
 }
 
 .header-nav li {
@@ -28,19 +28,20 @@ a {
   font-size: 20px;
 }
 .header-nav li :hover {
-  color: #51aafd;
+  color: #8f5bfe;
+  background: none;
 }
 
 .shop-icon {
-  color: #51aafd;
+  color: #8f5bfe;
   font-size: 30px;
 }
 
 .all-footer {
   display: flex;
-  width: 99%;
+  width: 99.5%;
   border: black 2px solid;
-  background-color: #51aafd;
+  background: linear-gradient(349deg, #935bfe 5%, #de8721 96%);
 }
 
 .box-about {
@@ -48,7 +49,7 @@ a {
   flex-direction: column;
   text-align: center;
   width: 50%;
-  margin: 0 15px;
+  margin: 5px 15px;
 }
 
 .box-contact {
@@ -59,15 +60,14 @@ a {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #f2e8f0;
 }
 
 .all-box {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: #51aafd solid 2px;
+  border: #8f5bfe solid 2px;
   border-radius: 20px;
   margin: 3% 3%;
   padding: 3% 3% 4%;
@@ -103,10 +103,13 @@ img {
   background: #e68d28;
   line-height: 5;
 }
-.btn-shop :hover {
-  transition: all 0.2s ease-in-out;
-  transform: scale(1.1);
-  box-shadow: 0px 0 0 50px red;
+
+a:hover {
+  background: #8f5bfe;
+}
+
+a:active {
+  background: #8f5bfe;
 }
 
 @media screen and (min-width: 1100px) {

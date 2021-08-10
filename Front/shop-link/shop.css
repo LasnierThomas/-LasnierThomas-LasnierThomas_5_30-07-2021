@@ -4,6 +4,10 @@ a {
   color: black;
 }
 
+img {
+  width: 100%;
+}
+
 .banner {
   width: 100%;
   display: flex;
@@ -13,12 +17,8 @@ a {
 }
 
 .site-title {
-  font-family: "indie flower", cursive;
-  font-size: 80px;
   text-align: center;
-  margin-left: 4%;
   line-height: 0;
-  color: #51aafd;
 }
 
 .header-nav li {
@@ -28,19 +28,20 @@ a {
   font-size: 20px;
 }
 .header-nav li :hover {
-  color: #51aafd;
+  color: #8f5bfe;
+  background: none;
 }
 
 .shop-icon {
-  color: #51aafd;
+  color: #8f5bfe;
   font-size: 30px;
 }
 
 .all-footer {
   display: flex;
-  width: 99%;
+  width: 99.5%;
   border: black 2px solid;
-  background-color: #51aafd;
+  background: linear-gradient(349deg, #935bfe 5%, #de8721 96%);
 }
 
 .box-about {
@@ -48,7 +49,7 @@ a {
   flex-direction: column;
   text-align: center;
   width: 50%;
-  margin: 0 15px;
+  margin: 5px 15px;
 }
 
 .box-contact {
@@ -56,6 +57,10 @@ a {
   flex-direction: column;
   text-align: center;
   width: 50%;
+}
+
+body {
+  background-color: #f2e8f0;
 }
 
 .title-shop {
@@ -75,6 +80,25 @@ a {
   margin-bottom: 2%;
 }
 
+.border-sell {
+  border: solid black 1px;
+}
+
+.line-object {
+  display: flex;
+  align-items: center;
+}
+
+.description-object {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+img {
+  width: 100%;
+}
+
 .box-object {
   display: flex;
   justify-content: flex-end;
@@ -87,27 +111,30 @@ a {
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 300px;
+  height: 420px;
   border: black 1px solid;
   margin-left: 2%;
   margin-top: 2%;
 }
 
-.object {
+.total-object {
   display: flex;
+  justify-content: space-around;
   font-size: 30px;
   line-height: 0;
 }
 
-.delivery {
+.total-delivery {
   display: flex;
+  justify-content: space-around;
   font-size: 30px;
   border-bottom: solid 1px black;
   margin-top: 0;
 }
 
-.total {
+.total-end {
   display: flex;
+  justify-content: space-around;
   font-size: 40px;
   font-weight: bold;
   margin: 0;
@@ -128,6 +155,27 @@ a {
   transition: all 0.2s ease-in-out;
   transform: scale(1.1);
   box-shadow: 0px 0 0 50px red;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  margin: 10% 20% 10% 21%;
+  padding: 5%;
+  border: black 1px solid;
+}
+
+.box-form {
+  margin: 3% 0;
+}
+
+#summit {
+  margin-top: 15%;
+  height: 40px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -155,12 +203,18 @@ a {
 .thank {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   font-size: 40px;
   text-align: center;
+  margin: 7% 3%;
 }
 
-.color-name {
-  color: #51aafd;
+strong {
+  color: #8f5bfe;
+}
+
+.paraph {
+  margin: 0;
 }
 
 .meassage {
@@ -174,6 +228,18 @@ a {
 
 .color-shop {
   color: #51aafd;
+}
+
+#summit {
+  margin-left: 25%;
+  width: 50%;
+}
+
+@media screen and (min-width: 1250px) {
+  .form {
+    width: 27%;
+    margin-left: 35%;
+  }
 }
 
 /*# sourceMappingURL=shop.css.map */

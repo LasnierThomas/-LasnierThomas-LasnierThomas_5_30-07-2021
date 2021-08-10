@@ -4,6 +4,9 @@ a{
     text-decoration: none;
     color: black;
 }
+img{
+    width: 100%;
+}
 .banner{
     width: 100%;
     display:flex;
@@ -11,14 +14,13 @@ a{
     align-items: center;
    justify-content: space-between; 
 }
+
 .site-title{
     
-    font-family: 'indie flower', cursive;
-    font-size: 80px;
+    
     text-align: center;
-    margin-left: 4%;
     line-height: 0;
-    color: rgb(81, 170, 253);
+    
 }
 
 .header-nav li{
@@ -27,12 +29,13 @@ a{
     margin: 0 15px;
     font-size: 20px;
         :hover{
-            color: rgb(81, 170, 253) ;
+            color: rgb(143, 91, 254) ;
+            background: none;
         }  
 }
 
 .shop-icon{
-    color: rgb(81, 170, 253);
+    color: rgb(143, 91, 254);
     font-size: 30px;
     
 }
