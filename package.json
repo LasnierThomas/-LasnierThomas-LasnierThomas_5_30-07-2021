@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass":"sass --watch ./Front/scss/index.scss:./Front/style.css ./Front/bear-link/bear.scss:./Front/bear-link/bear.css ./Front/shop-link/shop.scss:./Front/shop-link/shop.css"
+    "sass": "sass --watch ./Front/scss/index.scss:./Front/style.css ./Front/bear-link/bear.scss:./Front/bear-link/bear.css ./Front/shop-link/shop.scss:./Front/shop-link/shop.css"
   },
-
   "author": "",
   "license": "ISC",
   "browserlist": "last 4 versions",
