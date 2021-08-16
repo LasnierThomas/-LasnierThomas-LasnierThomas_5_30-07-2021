@@ -73,6 +73,11 @@ body {
   padding: 3% 3% 4%;
 }
 
+.color-menu {
+  font-size: 20px;
+  margin: 3% 0;
+}
+
 img {
   border-radius: 20px;
 }

@@ -15,14 +15,23 @@
         <nav class="header-nav">
             <ul>
                 <li><a class="link-accueil" href="../index.html">Accueil</a></li>
-                <li><a class="link-shop" href="../shop-link/shop.html"> <i class="fas fa-shopping-basket shop-icon"> </i></a></li>
-                
+                <li><a class="link-shop" href="../shop-link/shop.html"> <i class="fas fa-shopping-basket shop-icon">
+                        </i></a></li>
+
             </ul>
         </nav>
     </header>
     <div class="all-box">
         <img src="../images/teddy_3.jpg" alt="Famille ours"></img>
         <div class="box-txt">
+            <form methode="post" action="fichier.php">
+                <select class="color-menu" name="color">
+                    <option value="">Couleurs</option>
+                    <option value="red">Rouge</option>
+                    <option value="brown">Marron</option>
+                    <option value="white">Blanc</option>
+                </select>
+            </form>
             <h2>Petit ours blanc</h2>
             <div class="box-star">
                 <i class="fas fa-star star-full"></i>
