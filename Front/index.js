@@ -5,7 +5,7 @@ fetch("http://localhost:3000/api/teddies")
         responce.json().then(function(teddies) {
             let boxTeddies = document.getElementById("teddies-here")
             teddies.forEach(function (teddie) {
-                let newTeddy = `<a class="link-box" href="./bear-link/bear1.html">
+                let newTeddy = `<a class="link-box" href="./bear-link/bear1.html?id=${teddie._id}">
                                     <div class="box-article">
                                         <img src="${teddie.imageUrl}" alt="Ours en peluche"> </img>
                                         <div class="box-txt">

@@ -1,11 +1,22 @@
 console.log("je suis connecté");
 
-fetch("http://localhost:3000/api/teddies")
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+let id = urlParams.get("id")
+sessionStorage.setItem("id", id)
+
+let counter = 0 ;
+let numberShop = document.querySelector("#number-shop");
+
+const addCart = document.querySelector("#add-cart") ;
+
+
+fetch("http://localhost:3000/api/teddies/" + id)
     .then(function (responce) {
-        responce.json().then(function (teddies) {
+        responce.json().then(function (teddie) {
             let boxTeddies = document.getElementById("teddies-page")
-            teddies.forEach(function (teddie) {
-                let newTeddy = `<img src="${teddie.imageUrl}"></img>
+            boxTeddies.innerHTML = `<img src="${teddie.imageUrl}"></img>
                                     <div class="box-txt">
                                         <form methode="post" action="fichier.php">
                                             <select class="color-menu" name="color">
@@ -19,10 +30,19 @@ fetch("http://localhost:3000/api/teddies")
                                         
                                         <p class="box-price">${teddie.price / 100}€</p>
                                         <p class="box-info">"${teddie.description}"</p>
-                                            <a href="#" class="btn-shop">Ajouter au panier</a>
+                                            <a href="#" class="btn-shop" id="add-cart">Ajouter au panier</a>
                                     </div>`
-                boxTeddies.innerHTML = newTeddy
+            document.getElementById("add-cart").addEventListener("click", function(){
+                console.log("Cet élément est bien ajouté au panier")
+                sessionStorage.setItem("cart", id)
+                console.log("Voici le contenu du teddy", sessionStorage.getItem("cart"))
+    
             })
-
+            addCart.addEventListener('click', function() {
+                counter++
+                element.innerText = counter ;
+                
+            })
         })
     })
+

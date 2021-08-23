@@ -37,6 +37,19 @@ img {
   font-size: 30px;
 }
 
+#number-shop {
+  display: flex;
+  background-color: #fff;
+  color: #8f5bfe;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 1% 2%;
+  text-align: center;
+  justify-content: center;
+  width: 15px;
+  margin: -10% 0% 0% 88%;
+}
+
 .all-footer {
   display: flex;
   width: 99.5%;
