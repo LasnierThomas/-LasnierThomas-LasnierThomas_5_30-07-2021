@@ -18,3 +18,8 @@ fetch("http://localhost:3000/api/teddies/" + id)
             boxTeddies.innerHTML += newTeddie
         })
     })
+
+let totalShop = JSON.parse(sessionStorage.getItem("cart"))
+    if (totalShop === null){
+        totalShop = []
+    };
