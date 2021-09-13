@@ -28,6 +28,7 @@ body {
 .line-object{
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .description-object{
   display: flex;
@@ -37,6 +38,11 @@ body {
 
 img{
   width: 100%;
+}
+
+#delete{
+  padding: 5px;
+  background: none;
 }
 .box-object {
   display: flex;
