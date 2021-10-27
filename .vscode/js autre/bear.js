@@ -1,4 +1,4 @@
-console.log("je suis connecté");
+/*console.log("je suis connecté");
 
 const queryString = window.location.search;
 console.log(queryString);

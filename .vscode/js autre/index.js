@@ -1,4 +1,4 @@
-console.log("je suis connecté");
+/*console.log("je suis connecté");
 
 fetch("http://localhost:3000/api/teddies") 
     .then(function (responce){
