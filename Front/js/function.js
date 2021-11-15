@@ -3,6 +3,6 @@ function removeItem(id){
     myApi.getOneProduct(id).then(function(oneProduct){
         let myCart = new Cart()
         myCart.remove(oneProduct)
-        location.reload()
+        window.location.reload()
     })
 }

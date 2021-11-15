@@ -15,13 +15,35 @@ class API {
         let response = await fetch(this.url + id)
         return await response.json()
     }
+
+    async postCommand(contact) {
+        let myCart = new Cart()
+        let products = []
+        myCart.content.forEach(function (oneProduct) {
+            products.push(oneProduct._id)
+
+        })
+        let toSend = JSON.stringify({ contact, products })
+        await fetch(this.url + "order", {
+            method: "POST",
+            header: {
+                'Content-type': 'application/json'
+            },
+            body: toSend
+        })
+        return await response.json()
+    }
+        
+        
+            
 }
 
-//Création d'un class DomManager pour appeler les produit de l'API
+//Création d'une class DomManager pour appeler les produit de l'API
 
 class DomManager {
-    constructor(oneProduct) {
+    constructor(oneProduct, allProducts) {
         this.oneProduct = oneProduct
+        this.allProducts = allProducts
     }
 
     // Création du template pour tous les ours
@@ -74,31 +96,39 @@ class DomManager {
         })
 
     }
-
+    
     insertInShopPage() {
+        
+
         let container = document.getElementById("table-teddies")
         let template = `<tr class="line-object">
-        <td class="description-object"><img src="${this.oneProduct.imageUrl}" alt="ours brun"></td>
-        <td class="description-object">"${this.oneProduct.name}"</td>
-        <td class="description-object">${this.oneProduct.price / 100}€</td>
-        <td class="description-object"><button id="delete" ${this.oneProduct._id}><i class="fas fa-trash"></i></td></button>
-        </tr>`
-        
-        container.innerHTML += template
-        
-        
-        document.getElementById("delete").addEventListener("click", function () {
-            let myCart = new Cart()
-            myProdcut = this.oneProduct
+                            <td class="description-object"><img src="${this.oneProduct.imageUrl}" alt="ours brun"></td>
+                            <td class="description-object">"${this.oneProduct.name}"</td>
+                            <td class="description-object">${this.oneProduct.price / 100}€</td>
+                            <td class="description-object"><button onClick="removeItem('${this.oneProduct._id}')" ><i class="fas fa-trash"></i></td></button>
+                        </tr>`
 
-            myProdcut.splice(this.oneProduct,1)
+        container.innerHTML += template
+
+    }
+
+    insertInPricePage(){
+
+        document.getElementById("total-price-product").innerText = totalPrice
+        document.getElementById("total-price").innerText = totalPrice + 5
+        let myCart = new Cart ()
+        let myProducts = this.allProducts
+        let totalPrice = 0
+        myCart.forEach(function (myProducts) {
+        template(myProducts)
+        totalPrice += myProducts.price / 100
         })
+
         
     }
-    
-    
-    
+
 }
+
 //Création du local storage pour le panier 
 class Cart {
     constructor() {
@@ -138,6 +168,8 @@ class Cart {
         this.content.push(oneProduct)
         localStorage.setItem(this.nameInStorage, JSON.stringify(this.content))
     }
+
+    
 }
 
 

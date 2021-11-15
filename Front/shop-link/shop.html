@@ -20,7 +20,7 @@
         </nav>
     </header>
 
-    <h2 class="title-shop">Objet dans votre panier</h2>
+    <h2 class="title-shop">Objets dans votre panier</h2>
     <div class="all-box" >
         
             <table class="border-sell" id="table-teddies">
@@ -39,21 +39,26 @@
                 <p>Total :</p>
                 <p class="end-price"><span id="total-price"></span>€</p>
             </div>
-            <a href="#" class="validation">Valider ma commande</a>
+            <input id="submit-validation" value="Valider ma commande" type="button" class="validation"></input>
         </div>
     </div>
 
-    <form class="form" methode="post" action="#">
-        <label class="box-form" for="name">Nom</label>
-        <input type="text" id="name" name="name" >
-        <label class="box-form" for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom">
-        <label class="box-form" for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse">
-        <label class="box-form" for="cp">Code Postal</label>
-        <input type="text" id="cp" name="cp">
+    <form class="form" id="contact-form" methode="post" action="#">
+        <label class="box-form" for="lastName">Nom</label>
+        <input type="text" id="lastName" placeholder="Durand" name="lastName" >
+
+        <label class="box-form" for="fistName">Prénom</label>
+        <input type="text" id="firstName" placeholder="Thomas" name="firstName">
+
+        <label class="box-form" for="address">Adresse</label>
+        <input type="text" id="address" placeholder="0 rue du Bourg" name="address">
+
         <label class="box-form" for="city">Ville</label>
-        <input type="text" id="city" name="city">
+        <input type="text" id="city" placeholder="71100 Chalon" name="city">
+
+        <label class="box-form" for="email">Email</label>
+        <input type="text" id="email" placeholder="durand@oragne.fr" name="email">
+
         <input id="summit" type="submit" value="Envoyer">
     </form>
 
