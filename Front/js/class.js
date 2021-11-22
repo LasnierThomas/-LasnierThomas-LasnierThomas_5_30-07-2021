@@ -16,22 +16,16 @@ class API {
         return await response.json()
     }
 
-    async postCommand(contact) {
-        let myCart = new Cart()
-        let products = []
-        myCart.content.forEach(function (oneProduct) {
-            products.push(oneProduct._id)
-
-        })
+    async postCommand(contact, products) {
         let toSend = JSON.stringify({ contact, products })
-        await fetch(this.url + "order", {
+        let response = await fetch(this.url + "order", {
             method: "POST",
-            header: {
+            headers: {
                 'Content-type': 'application/json'
             },
             body: toSend
         })
-        return await response.json()
+        return await response.json() 
     }
         
         
@@ -41,9 +35,9 @@ class API {
 //Création d'une class DomManager pour appeler les produit de l'API
 
 class DomManager {
-    constructor(oneProduct, allProducts) {
+    constructor(oneProduct) {
         this.oneProduct = oneProduct
-        this.allProducts = allProducts
+        
     }
 
     // Création du template pour tous les ours
@@ -74,22 +68,25 @@ class DomManager {
     insertInProduct() {
         let myProdcut = this.oneProduct
         let boxTeddie = document.getElementById("teddies-page")
+        let colorContainer = document.getElementById("color-teddie")
+        
         boxTeddie.innerHTML = `<img src="${this.oneProduct.imageUrl}"></img>
                                 <div class="box-txt">
-                                    <form methode="post" action="fichier.php">
-                                        <select class="color-menu" name="color">
-                                            <option value="">Couleurs</option>
-                                            <option value="red">Rouge</option>
-                                            <option value="brown">Marron</option>
-                                            <option value="white">Blanc</option>
-                                        </select>
-                                    </form>
+                                    <select id="color-teddie" class="color-menu" name="color">
+                                    <option value="1">${this.oneProduct._id.colors}</option>
+                                    <option value="2">${this.oneProduct.colors}</option>
+                                    <option value="3">${this.oneProduct.colors}</option>
+                                    <option value="4">${this.oneProduct.colors}</option>
+                                        
+                                    </select>
                                     <h2>${this.oneProduct.name}</h2>
                                     
                                     <p class="box-price">${this.oneProduct.price / 100}€</p>
                                     <p class="box-info">"${this.oneProduct.description}"</p>
                                         <a href="#" class="btn-shop" id="add-cart">Ajouter au panier</a>
                                 </div>`
+            colorContainer.innerHTML += `<option>${this.oneProduct._id.colors}</option>`
+                
         document.getElementById("add-cart").addEventListener("click", function () {
             let myCart = new Cart()
             myCart.add(myProdcut)
@@ -104,6 +101,7 @@ class DomManager {
         let template = `<tr class="line-object">
                             <td class="description-object"><img src="${this.oneProduct.imageUrl}" alt="ours brun"></td>
                             <td class="description-object">"${this.oneProduct.name}"</td>
+                            <td class="description-object">"${this.oneProduct.colors}"</td>
                             <td class="description-object">${this.oneProduct.price / 100}€</td>
                             <td class="description-object"><button onClick="removeItem('${this.oneProduct._id}')" ><i class="fas fa-trash"></i></td></button>
                         </tr>`
@@ -112,18 +110,12 @@ class DomManager {
 
     }
 
-    insertInPricePage(){
-
-        document.getElementById("total-price-product").innerText = totalPrice
-        document.getElementById("total-price").innerText = totalPrice + 5
-        let myCart = new Cart ()
-        let myProducts = this.allProducts
-        let totalPrice = 0
-        myCart.forEach(function (myProducts) {
-        template(myProducts)
-        totalPrice += myProducts.price / 100
-        })
-
+    static insertInPricePage(){
+        let myCart = new Cart()
+        let totalPrice = myCart.totalPrice
+        document.getElementById("total-price-product").innerText = totalPrice.toString()
+        document.getElementById("total-price").innerText = (totalPrice + 5).toString()
+        
         
     }
 
@@ -134,6 +126,7 @@ class Cart {
     constructor() {
         this.nameInStorage = "cart"
         this.content = []
+        this.totalPrice = 0
         this.get()
     }
 
@@ -145,6 +138,7 @@ class Cart {
         else {
             this.content = JSON.parse(this.content)
         }
+        this.getTotalPrice()
     }
 
     remove(oneProduct) {
@@ -160,6 +154,14 @@ class Cart {
         }
     }
 
+    getTotalPrice(){
+        this.totalPrice = 0
+        this.content.forEach((oneItem, ) => {
+            this.totalPrice += oneItem.price
+        })
+        this.totalPrice /=100
+    }
+
     save() {
         localStorage.setItem(this.nameInStorage, JSON.stringify(this.content))
     }
@@ -167,6 +169,7 @@ class Cart {
     add(oneProduct) {
         this.content.push(oneProduct)
         localStorage.setItem(this.nameInStorage, JSON.stringify(this.content))
+        this.save()
     }
 
     
