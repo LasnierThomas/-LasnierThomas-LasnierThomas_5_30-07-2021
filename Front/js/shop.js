@@ -1,3 +1,5 @@
+// On récupere le Cart pour l'utiliser
+
 let myCart = new Cart()
 myCart.content.forEach(function(oneProduct){
     let myProduct = new DomManager(oneProduct)
@@ -13,7 +15,7 @@ let form = document.getElementById("contact-form")
 let formContact = new FormData(form)
 
 
-//on récupère les données
+//on récupère les données du formulaire
 
 let lastName = formContact.get("lastName")
 let firstName = formContact.get("firstName")
@@ -31,12 +33,16 @@ let contactObject = {
     email: email
 }
 
+// création variable qui permet d'ajouter chaque produit dans un tableau du panier
+
     let products = []
     myCart.content.forEach(function (oneProduct){
         products.push(oneProduct._id)
     })
 
     let myApi = new API()
+
+// On ajoute les données dans les local storage
 
     myApi.postCommand(contactObject, products).then(function (response) {
         console.log(response)

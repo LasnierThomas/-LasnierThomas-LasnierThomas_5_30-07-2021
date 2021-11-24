@@ -5,19 +5,24 @@ class API {
         this.url = "http://localhost:3000/api/teddies/"
     }
 
+// On récupere les produits grace au GET
+
     async getAllProducts() {
         let response = await fetch(this.url)
         return await response.json()
     }
 
+// On récupere l'id des produits grace au GET
 
     async getOneProduct(id) {
         let response = await fetch(this.url + id)
         return await response.json()
     }
 
+// on récupere le formulaire de contact et les produits vendu    
+
     async postCommand(contact, products) {
-        let toSend = JSON.stringify({ contact, products })
+        let toSend = JSON.stringify({contact, products})
         let response = await fetch(this.url + "order", {
             method: "POST",
             headers: {
@@ -25,11 +30,10 @@ class API {
             },
             body: toSend
         })
-        return await response.json() 
+        return await response.json()
     }
-        
-        
-            
+
+
 }
 
 //Création d'une class DomManager pour appeler les produit de l'API
@@ -37,7 +41,7 @@ class API {
 class DomManager {
     constructor(oneProduct) {
         this.oneProduct = oneProduct
-        
+
     }
 
     // Création du template pour tous les ours
@@ -68,16 +72,14 @@ class DomManager {
     insertInProduct() {
         let myProdcut = this.oneProduct
         let boxTeddie = document.getElementById("teddies-page")
-        let colorContainer = document.getElementById("color-teddie")
         
         boxTeddie.innerHTML = `<img src="${this.oneProduct.imageUrl}"></img>
                                 <div class="box-txt">
                                     <select id="color-teddie" class="color-menu" name="color">
-                                    <option value="1">${this.oneProduct._id.colors}</option>
-                                    <option value="2">${this.oneProduct.colors}</option>
-                                    <option value="3">${this.oneProduct.colors}</option>
-                                    <option value="4">${this.oneProduct.colors}</option>
-                                        
+                                       ${this.oneProduct.colors.map(function(color){
+                                            return `<option value="${color}">${color}</option>`
+                                        })}
+                                       
                                     </select>
                                     <h2>${this.oneProduct.name}</h2>
                                     
@@ -85,17 +87,19 @@ class DomManager {
                                     <p class="box-info">"${this.oneProduct.description}"</p>
                                         <a href="#" class="btn-shop" id="add-cart">Ajouter au panier</a>
                                 </div>`
-            colorContainer.innerHTML += `<option>${this.oneProduct._id.colors}</option>`
-                
+
         document.getElementById("add-cart").addEventListener("click", function () {
             let myCart = new Cart()
+            myProdcut.colors = document.getElementById("color-teddie").value
             myCart.add(myProdcut)
         })
 
     }
-    
+
+// Création du template pour la page Shop
+
     insertInShopPage() {
-        
+
 
         let container = document.getElementById("table-teddies")
         let template = `<tr class="line-object">
@@ -110,18 +114,20 @@ class DomManager {
 
     }
 
-    static insertInPricePage(){
+// Création de la funtion pour la partie prix    
+
+    static insertInPricePage() {
         let myCart = new Cart()
         let totalPrice = myCart.totalPrice
         document.getElementById("total-price-product").innerText = totalPrice.toString()
         document.getElementById("total-price").innerText = (totalPrice + 5).toString()
-        
-        
+
+
     }
 
 }
 
-//Création du local storage pour le panier 
+//Création de la class Cart
 class Cart {
     constructor() {
         this.nameInStorage = "cart"
@@ -130,16 +136,19 @@ class Cart {
         this.get()
     }
 
+// Funtion GET qui permet de récuprer dans le local storage
+
     get() {
         this.content = localStorage.getItem(this.nameInStorage)
         if (this.content === null) {
             this.content = []
-        }
-        else {
+        } else {
             this.content = JSON.parse(this.content)
         }
         this.getTotalPrice()
     }
+
+// Function remove qui permet de supprimer un objet dans le panier
 
     remove(oneProduct) {
         let indexToRemove = null
@@ -154,17 +163,23 @@ class Cart {
         }
     }
 
-    getTotalPrice(){
+// Function qui permet de calculer le prix du panier
+
+    getTotalPrice() {
         this.totalPrice = 0
-        this.content.forEach((oneItem, ) => {
+        this.content.forEach((oneItem,) => {
             this.totalPrice += oneItem.price
         })
-        this.totalPrice /=100
+        this.totalPrice /= 100
     }
+
+// Function qui sauvegarde le panier après chaque modification    
 
     save() {
         localStorage.setItem(this.nameInStorage, JSON.stringify(this.content))
     }
+
+// Function qui permet d'ajouter un nouveau produit au local storage    
 
     add(oneProduct) {
         this.content.push(oneProduct)
@@ -172,7 +187,7 @@ class Cart {
         this.save()
     }
 
-    
+
 }
 
 
