@@ -78,8 +78,7 @@ class DomManager {
                                     <select id="color-teddie" class="color-menu" name="color">
                                        ${this.oneProduct.colors.map(function(color){
                                             return `<option value="${color}">${color}</option>`
-                                        })}
-                                       
+                                       })}
                                     </select>
                                     <h2>${this.oneProduct.name}</h2>
                                     
@@ -93,8 +92,8 @@ class DomManager {
             myProdcut.colors = document.getElementById("color-teddie").value
             myCart.add(myProdcut)
         })
-
     }
+
 
 // Création du template pour la page Shop
 
@@ -111,8 +110,8 @@ class DomManager {
                         </tr>`
 
         container.innerHTML += template
-
     }
+    
 
 // Création de la funtion pour la partie prix    
 
@@ -121,10 +120,7 @@ class DomManager {
         let totalPrice = myCart.totalPrice
         document.getElementById("total-price-product").innerText = totalPrice.toString()
         document.getElementById("total-price").innerText = (totalPrice + 5).toString()
-
-
     }
-
 }
 
 //Création de la class Cart
