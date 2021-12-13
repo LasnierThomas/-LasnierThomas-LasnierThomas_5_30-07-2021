@@ -159,21 +159,30 @@ img {
   margin: 0;
 }
 
-.validation {
+#summit {
   display: flex;
   text-align: center;
   justify-content: center;
   background-color: #05b105;
   color: white;
-  margin: 10% 30%;
   padding: 10px 10px;
   border-radius: 20px;
   width: 35%;
+  margin-top: 15%;
+  height: 40px;
 }
-.validation :hover {
+#summit :hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.1);
   box-shadow: 0px 0 0 50px red;
+}
+
+.text-success {
+  color: green;
+}
+
+.text-danger {
+  color: red !important;
 }
 
 .form {
